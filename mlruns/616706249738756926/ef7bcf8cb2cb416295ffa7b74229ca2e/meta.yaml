@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/pierrendong/Documents/2025_Projects/MachineLearning Engineering/Breast_cancer_PRJ/mlruns/616706249738756926/ef7bcf8cb2cb416295ffa7b74229ca2e/artifacts
+end_time: 1738068858609
+entry_point_name: ''
+experiment_id: '616706249738756926'
+lifecycle_stage: active
+run_id: ef7bcf8cb2cb416295ffa7b74229ca2e
+run_name: powerful-smelt-626
+run_uuid: ef7bcf8cb2cb416295ffa7b74229ca2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738068856641
+status: 3
+tags: []
+user_id: pierrendong
