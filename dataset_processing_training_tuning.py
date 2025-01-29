@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -55,3 +56,15 @@ with mlflow.start_run():
     mlflow.log_params(grid_search.best_params_)
     mlflow.log_metric("accuracy", grid_search.best_score_)
     print("Model logged in MLflow")
+
+
+
+def detect_drift(new_data, training_data):
+    mean_diff = np.abs(new_data.mean() - training_data.mean())
+    threshold = 0.1  # Adjust threshold as needed
+    drift_detected = (mean_diff > threshold).any()
+    return drift_detected
+
+new_data = pd.read_csv("new_data.csv")
+if detect_drift(new_data, X_train_scaled):
+    print("Drift detected! Retraining recommended.")

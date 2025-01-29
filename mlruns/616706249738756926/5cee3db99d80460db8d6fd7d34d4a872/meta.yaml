@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/pierrendong/Documents/2025_Projects/MachineLearning Engineering/Breast_cancer_PRJ/mlruns/616706249738756926/5cee3db99d80460db8d6fd7d34d4a872/artifacts
+end_time: 1738071550439
+entry_point_name: ''
+experiment_id: '616706249738756926'
+lifecycle_stage: active
+run_id: 5cee3db99d80460db8d6fd7d34d4a872
+run_name: welcoming-lynx-119
+run_uuid: 5cee3db99d80460db8d6fd7d34d4a872
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738071548703
+status: 3
+tags: []
+user_id: pierrendong
