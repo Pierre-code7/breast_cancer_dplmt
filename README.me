@@ -1,75 +1,105 @@
-# MLOps Project: End-to-End Machine Learning Deployment
+MLOps Project: End-to-End Machine Learning Deployment
 
-## Overview
-This project demonstrates an **end-to-end Machine Learning deployment pipeline** incorporating MLOps best practices. It covers:
+Overview
 
-1. **Data Collection and Preprocessing**
-2. **Model Training and Hyperparameter Tuning**
-3. **Deployment to a Production-Like Environment with Docker**
-4. **CI/CD Pipeline Integration with Jenkins**
-5. **Monitoring for Drift and Performance with MLflow & Prometheus**
+This project demonstrates an end-to-end Machine Learning deployment pipeline incorporating MLOps best practices. It covers:
 
-## Technologies Used
-- **Machine Learning**: Scikit-learn
-- **Deployment**: Flask, Docker
-- **CI/CD**: Jenkins
-- **Experiment Tracking**: MLflow
-- **Monitoring**: Prometheus, Grafana
+Data Collection and Preprocessing
 
-## Steps
+Model Training and Hyperparameter Tuning
 
-### 1. Data Collection and Preprocessing
-- The **Breast Cancer dataset** from Scikit-learn is used.
-- Features are scaled using **StandardScaler**.
-- Preprocessed data is stored in CSV files (`X_train.csv`, `y_train.csv`).
+Deployment to a Production-Like Environment with Docker
 
-### 2. Model Training and Hyperparameter Tuning
-- A **RandomForestClassifier** is trained.
-- **GridSearchCV** is used for hyperparameter tuning.
-- The best model is saved as `breast_cancer_model.pkl`.
-- Model training metadata is logged using **MLflow**.
+CI/CD Pipeline Integration with Jenkins
 
-### 3. Deployment with Flask and Docker
-- A Flask API (`app.py`) is created to serve predictions.
-- A **Dockerfile** packages the model and Flask app.
-- The container is built and run using:
-  ```bash
-  docker build -t breast-cancer-api .
-  docker run -p 5000:5000 breast-cancer-api
-  ```
+Monitoring for Drift and Performance with MLflow & Prometheus
 
-### 4. CI/CD Pipeline with Jenkins
-- A **Jenkinsfile** automates model training, testing, and deployment.
-- Jenkins triggers the pipeline upon new commits.
+Technologies Used
 
-### 5. Monitoring for Drift and Performance
-- **MLflow** logs model versions and performance metrics.
-- **Prometheus & Grafana** monitor API requests and detect data drift.
-- A drift detection script compares new data with training statistics.
+Machine Learning: Scikit-learn
 
-## Running the Project
-### Prerequisites
-- Install **Docker**, **Jenkins**, **MLflow**, and **Prometheus**.
-- Clone the repository and navigate to the project directory:
-  ```bash
-  git clone https://github.com/your-repo-url.git
-  cd mlops-project
-  ```
-- Build and run the Docker container:
-  ```bash
-  docker build -t breast-cancer-api .
-  docker run -p 5000:5000 breast-cancer-api
-  ```
-- Test the API with sample input:
-  ```bash
-  curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '[{"mean radius": 17.99, "mean texture": 10.38, "mean perimeter": 122.8, ...}]'
-  ```
+Deployment: Flask, Docker
 
-## Future Enhancements
-- Deploy the container using **Kubernetes**.
-- Automate model retraining with **MLflow Pipelines**.
-- Implement real-time **A/B testing** for different models.
+CI/CD: Jenkins
 
-## Contributors
-- **Your Name** (your.email@example.com)
+Experiment Tracking: MLflow
+
+Monitoring: Prometheus, Grafana
+
+Steps
+
+1. Data Collection and Preprocessing
+
+The Breast Cancer dataset from Scikit-learn is used.
+
+Features are scaled using StandardScaler.
+
+Preprocessed data is stored in CSV files (X_train.csv, y_train.csv).
+
+2. Model Training and Hyperparameter Tuning
+
+A RandomForestClassifier is trained.
+
+GridSearchCV is used for hyperparameter tuning.
+
+The best model is saved as breast_cancer_model.pkl.
+
+Model training metadata is logged using MLflow.
+
+3. Deployment with Flask and Docker
+
+A Flask API (app.py) is created to serve predictions.
+
+A Dockerfile packages the model and Flask app.
+
+The container is built and run using:
+
+docker build -t breast-cancer-api .
+docker run -p 5000:5000 breast-cancer-api
+
+4. CI/CD Pipeline with Jenkins
+
+A Jenkinsfile automates model training, testing, and deployment.
+
+Jenkins triggers the pipeline upon new commits.
+
+5. Monitoring for Drift and Performance
+
+MLflow logs model versions and performance metrics.
+
+Prometheus & Grafana monitor API requests and detect data drift.
+
+A drift detection script compares new data with training statistics.
+
+Running the Project
+
+Prerequisites
+
+Install Docker, Jenkins, MLflow, and Prometheus.
+
+Clone the repository and navigate to the project directory:
+
+git clone https://github.com/your-repo-url.git
+cd mlops-project
+
+Build and run the Docker container:
+
+docker build -t breast-cancer-api .
+docker run -p 5000:5000 breast-cancer-api
+
+Test the API with sample input:
+
+curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '[{"mean radius": 17.99, "mean texture": 10.38, "mean perimeter": 122.8, ...}]'
+
+Future Enhancements
+
+Deploy the container using Kubernetes.
+
+Automate model retraining with MLflow Pipelines.
+
+Implement real-time A/B testing for different models.
+
+Contributors
+
+Your Name (your.email@example.com)
 
